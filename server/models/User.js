@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
 
+const contactSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  phone: { type: String, required: true },
+  email: { type: String },
+});
+
 const UserSchema = new mongoose.Schema(
   {
     firstName: {
@@ -31,6 +37,7 @@ const UserSchema = new mongoose.Schema(
       minlength: 3, 
       trim: true,
     },
+    contact:[contactSchema],
     image: {
       type: String,
       default: "image-avatar.png",

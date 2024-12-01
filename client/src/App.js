@@ -1,9 +1,8 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import MainPage from "./components/Maine"
-import Register from "./components/Register"
-import Login from "./components/Login"
-import Chat from "./components/Chat"
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainPage from "./components/Maine";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Chat from "./components/Chat";
 
 function App() {
   return (
