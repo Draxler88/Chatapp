@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getUsers , getUser, addUser, updateUser, deleteUser, addContact, deleteContact, updateContact } = require("../controllers/userController.js");
+const { getUsers , getUser, addUser, updateUser, logIn, deleteUser, addContact, deleteContact, updateContact } = require("../controllers/userController.js");
 
 /**
  * @desc get all users from DB
@@ -27,6 +27,9 @@ router.get("/:id", getUser);
  * @access public
  */
 router.post("/adduser", addUser);
+
+
+router.post("/login", logIn);
 
 
 

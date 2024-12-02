@@ -22,6 +22,18 @@ exports.getUser = async (req, res) => {
   }
 };
 
+exports.logIn = async (req, res) => {
+  const { email, password } = req.body;
+
+  const userExists = await User.findOne({ email })
+
+  if (!userExists) return res.status(404).json({ message : "user not found"});
+
+  if(userExists.password !== password) return res.status(404).json({ message : "email or password is incorrect!"});
+
+  return res.status(200).json({ message : "welcome to  Home page"})
+}
+
 exports.addUser = async (req, res) => {
   try {
     const emailExists = await User.findOne({ email: req.body.email });
